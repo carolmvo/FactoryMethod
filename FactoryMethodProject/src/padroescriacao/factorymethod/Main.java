@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Menu de opções
         System.out.println("Escolha a forma de pagamento:");
         System.out.println("1 - Cartão de Crédito");
         System.out.println("2 - PayPal");
@@ -18,7 +17,6 @@ public class Main {
 
         String formaPagamento = "";
 
-        // Mapeia a opção para o nome da forma de pagamento
         switch (opcao) {
             case 1:
                 formaPagamento = "CartaoCredito";
@@ -35,7 +33,6 @@ public class Main {
         }
 
         try {
-            // Obtém o método de pagamento e aprova
             IPagamento pagamento = PagamentoFactory.obterPagamento(formaPagamento);
             System.out.println(pagamento.aprovar());
         } catch (IllegalArgumentException e) {
